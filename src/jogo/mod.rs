@@ -103,20 +103,39 @@ pub(crate) fn references_and_borrowing() {
 
     // -> Mutable Reference
 
-    let mut s = String::from("hello");
+    // let mut s = String::from("hello");
 
-    println!("{}", s);
+    // println!("{}", s);
 
-    let a: () = change(&mut s);
+    // change(&mut s);
 
-    println!("{:?}", a);
+    // println!("{:?}", s);
+
+    // let mut s = String::from("hello");
+
+    // let r1 = &s; // no problem
+    // let r2 = &s; // no problem
+    // println!("{} and {}", r1, r2);
+    // // variables r1 and r2 will not be used after this point
+
+    // let r3 = &mut s; // no problem
+    // println!("{}", r3);
+
+    // -> Dangling References
+
+    // let reference_to_s = dangle();
 }
 
 // fn calculate_length(s: &String) -> usize {
 //     s.len()
 // }
 
-fn change(some_string: &mut String) {
-    println!("{}", some_string);
-    some_string.push_str(", world");
-}
+// fn change(some_string: &mut String) {
+//     some_string.push_str(", world");
+//     println!("{}", some_string);
+// }
+
+// fn dangle() -> String {
+//     let s = String::from("hello");
+//     s
+// }
